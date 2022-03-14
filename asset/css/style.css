@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary__pink_color: #e26e70;
+}
+
+body {
+  height: 100vh;
+  position: relative;
+  font-family: sans-serif;
+  background-image: linear-gradient(
+    45deg,
+    rgb(65, 88, 208) 0%,
+    rgb(200, 80, 192) 50%,
+    rgb(255, 204, 112) 100%
+  );
+}
+
+.modal {
+  /* Căn giữa cách 1 */
+  /*display: flex;
+    align-items: center;
+    justify-content: center; */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal__open_btn {
+  /* Căn giữa cách 2 */
+  top: 50%;
+  left: 50%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  padding: 20px 40px;
+  border-radius: 6px;
+  position: absolute;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 2px #dadada;
+}
+
+.modal__open_btn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.modal__container {
+  width: 450px;
+  overflow: hidden;
+  border-radius: 5px;
+  top:25%;
+  /* margin: 200px auto; */
+  background-color: #fff;
+  animation: modal-show 0.8s ease;
+}
+
+.modal__header {
+  display: flex;
+  padding: 15px;
+  color: #fff;
+  font-size: 17px;
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary__pink_color);
+}
+
+.modal__header p {
+  letter-spacing: 1.4px;
+}
+
+.modal__header .modal__header_close {
+  padding: 10px;
+  margin: -10px;
+  cursor: pointer;
+}
+
+.modal__header .modal__item {
+  font-size: 15px;
+}
+
+.modal__header .modal__item:hover {
+  opacity: 0.8;
+}
+
+.modal__body {
+  padding: 16px;
+}
+
+.modal__body .modal__body_title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--primary__pink_color);
+}
+
+.modal__footer {
+  padding: 16px;
+  text-align: right;
+}
+
+.modal__footer .modal__close_btn {
+  background: var(--primary__pink_color);
+  color: #fff;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.modal__footer .modal__close_btn:hover {
+  opacity: 0.8;
+}
+
+@keyframes modal-show {
+  from {
+    opacity: 0;
+   transform: translateY(-500px)
+  }
+  to {
+    opacity: 1;
+    top: 50%;
+  }
+}
